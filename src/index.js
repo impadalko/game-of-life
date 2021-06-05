@@ -2,6 +2,10 @@ let columns = 0
 let rows = 0
 let board
 
+const createBoard = () => {
+  return Array.from(Array(rows), () => new Array(columns).fill(false))
+}
+
 const createGrid = (event) => {
   const table = document.getElementById('table')
   table.innerHTML = ''
@@ -11,7 +15,7 @@ const createGrid = (event) => {
   if (event.target[2].value) {
     document.querySelector(':root').style.setProperty('--grid-size', event.target[2].value)
   }
-  board = Array.from(Array(rows), () => new Array(columns).fill(false))
+  board = createBoard()
 
   for (let i = 0; i < rows; i++) {
     const row = table.insertRow()
@@ -44,7 +48,7 @@ const countNeighbors = (row, column) => {
 }
 
 const frameAdvance = () => {
-  const newBoard = Array.from(Array(rows), () => new Array(columns).fill(false))
+  const newBoard = createBoard()
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       const count = countNeighbors(i, j)
@@ -79,4 +83,20 @@ playButton.addEventListener('click', () => {
     interval = null
     event.target.innerHTML = 'Play'
   }
+})
+
+const clearButton = document.getElementById('clear-button')
+clearButton.addEventListener('click', () => {
+  if (interval) {
+    window.clearInterval(interval)
+    interval = null
+    playButton.innerHTML = 'Play'
+  }
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      const cell = document.getElementById(`${i}-${j}`)
+      cell.classList.remove('selected')
+    }
+  }
+  board = createBoard()
 })

@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="A browser implementation of conway's game of life" />
-    <meta name="title" content="Game of life" />
+    <title>Game of life</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <form id="grid-form">
       <label> Columns: <input type="number" /> </label>
       <label> Rows: <input type="number" /> </label>
-      <label> Grid size: <input type="text" placeholder="20px" /> </label>
+      <label> Cell size: <input type="text" placeholder="20px" /> </label>
       <input type="submit" value="Create grid" />
     </form>
     <table id="table"></table>
     <div>
       <button id="advance-button">Advance 1 frame</button>
       <button id="play-button">Play</button>
+      <button id="clear-button">Clear</button>
     </div>
   </body>
   <script src="src/index.js"></script>
