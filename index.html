@@ -10,12 +10,16 @@
   </head>
   <body>
     <form id="grid-form">
-      <label> Columns: <input type="number" /> </label>
-      <label> Rows: <input type="number" /> </label>
+      <label> Columns: <input type="number" placeholder="20" /> </label>
+      <label> Rows: <input type="number" placeholder="20" /> </label>
       <label> Cell size: <input type="text" placeholder="20px" /> </label>
       <input type="submit" value="Create grid" />
     </form>
     <table id="table"></table>
+    <div class="instructions">
+      <p>Click on any cell to toggle its status. Click and drag to set them to true</p>
+      <label> Erase when dragging? <input id="erase-checkbox" type="checkbox" /> </label>
+    </div>
     <div>
       <button id="advance-button">Advance 1 frame</button>
       <button id="play-button">Play</button>
