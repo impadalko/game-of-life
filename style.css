@@ -1,0 +1,44 @@
+:root {
+  --grid-size:20px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+form {
+  margin: 10px;
+}
+
+input[type=number]{
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+td {
+  width: var(--grid-size);
+  height: var(--grid-size);
+  border: solid 1px black;
+}
+
+td.selected {
+  background-color: blue;
+}
+
+button {
+  margin: 10px;
+}
