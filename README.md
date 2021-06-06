@@ -1,3 +1,5 @@
 # game-of-life
 
-An implementation of conway's game of life that runs on the browser
+A browser implementation of conway's game of life
+
+Check out at https://impadalko.com/game-of-life/
